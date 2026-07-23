@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "strands-google"
-version = "0.1.0"
+version = "0.2.0"
 description = "Google API integration tools for Strands Agents"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -30,6 +30,7 @@ dependencies = [
     "google-api-python-client",
     "google-auth-httplib2",
     "google-auth-oauthlib",
+    "strands-mcp-server",
 ]
 
 [project.urls]
@@ -37,6 +38,9 @@ Homepage = "https://github.com/cagataycali/strands-google"
 Documentation = "https://github.com/cagataycali/strands-google#readme"
 Repository = "https://github.com/cagataycali/strands-google"
 Issues = "https://github.com/cagataycali/strands-google/issues"
+
+[project.scripts]
+strands-google = "strands_google.mcp:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["strands_google"]

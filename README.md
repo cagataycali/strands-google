@@ -6,6 +6,37 @@
 
 Access 200+ Google APIs (Gmail, Drive, Calendar, YouTube, etc.) directly from your Strands agent with simple, powerful tools.
 
+## 🔌 Use as an MCP server
+
+Use strands-google from **Claude Code, Claude Desktop, Cursor, Kiro, or any MCP client** — all Google tools (`use_google`, `google_auth`, `gmail_send`, `gmail_reply`) become MCP tools.
+
+```bash
+claude mcp add google -- uvx strands-google
+```
+
+Claude Desktop config:
+
+```json
+{
+  "mcpServers": {
+    "google": {
+      "command": "uvx",
+      "args": ["strands-google"]
+    }
+  }
+}
+```
+
+Options:
+
+```bash
+strands-google --tools use_google          # expose a subset
+strands-google --skip gmail                # drop a group
+strands-google --http --port 8000          # HTTP mode, multi-client
+```
+
+---
+
 ## Features
 
 - ✅ **Universal Google API Access** - Gmail, Drive, Calendar, YouTube, Sheets, Docs, and 200+ more
